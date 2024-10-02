@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Task Manager" Height="450" Width="800">
     <Grid>
-        <DataGrid x:Name="grid" HorizontalAlignment="Left" Height="300" VerticalAlignment="Top" Width="500" AutoGenerateColumns="True" SelectionChanged="grid_SelectionChanged"/>
+        <DataGrid x:Name="grid" HorizontalAlignment="Left" Height="300" VerticalAlignment="Top" Width="500" AutoGenerateColumns="True"/>
 
         <Button Content="Load Processes" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="120" Margin="10,0,0,10" Click="Button_Click"/>
         <Button Content="Kill Process" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="120" Margin="140,0,0,10" Click="Button_Click_1"/>

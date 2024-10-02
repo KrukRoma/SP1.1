@@ -18,7 +18,7 @@ namespace SP1
         {
             InitializeComponent(); 
             LoadProcesses(); 
-            SetTimer(); 
+            //SetTimer(); 
         }
 
         private void LoadProcesses()
@@ -27,8 +27,6 @@ namespace SP1
             {
                 ProcessName = p.ProcessName,
                 Id = p.Id,
-                TotalProcessorTime = p.TotalProcessorTime,
-                PriorityClass = p.PriorityClass.ToString()
             }).ToList();
 
             grid.ItemsSource = processes; 
@@ -77,7 +75,7 @@ namespace SP1
             if (grid.SelectedItem != null)
             {
                 var selectedProcess = (dynamic)grid.SelectedItem;
-                MessageBox.Show($"Process Name: {selectedProcess.ProcessName}\nPID: {selectedProcess.Id}\nPriority: {selectedProcess.PriorityClass}");
+                MessageBox.Show($"Process Name: {selectedProcess.ProcessName}\nPID: {selectedProcess.Id}");
             }
             else
             {
@@ -102,23 +100,18 @@ namespace SP1
         private void timeCB_SelectionChanged(object sender, RoutedEventArgs e)
         {
             var selectedItem = (ComboBoxItem)timeCB.SelectedItem;
-            _updateInterval = int.Parse(selectedItem.Content.ToString()) * 1000;
-            _timer.Interval = TimeSpan.FromMilliseconds(_updateInterval);
+            //_updateInterval = int.Parse(selectedItem.Content.ToString()) * 1000;
+            //_timer.Interval = TimeSpan.FromMilliseconds(_updateInterval);
         }
 
         private void check_Checked(object sender, RoutedEventArgs e)
         {
-            _isUpdating = check.IsChecked ?? false;
+            //_isUpdating = check.IsChecked ?? false;
         }
 
         private void timeCB_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
-        }
-
-        private void grid_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
+        }       
     }
 }
